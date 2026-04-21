@@ -1,0 +1,8 @@
+services: 
+  oci_cron:
+    build: .
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      - ~/.oci:/root/.oci:ro
+
