@@ -5,4 +5,5 @@ services:
     restart: unless-stopped
     volumes:
       - ~/.oci:/root/.oci:ro
+      - ~/.ssh:/root/.ssh:ro
 
