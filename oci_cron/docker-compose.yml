@@ -2,8 +2,13 @@ services:
   oci_cron:
     build: .
     env_file: .env
-    restart: unless-stopped
+    container_name: oci-sniper
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     volumes:
-      - ~/.oci:/root/.oci:ro
-      - ~/.ssh:/root/.ssh:ro
+      - /home/ubuntu/.oci:/root/.oci:ro
+      - /home/ubuntu/.ssh:/root/.ssh:ro
 
